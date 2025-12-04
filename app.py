@@ -5,7 +5,7 @@ import requests
 import threading
 from urllib.parse import urlparse
 
-app = Flask(name)
+app = Flask(__name__)
 
 # Global variable to track running tasks
 active_tasks = {}
