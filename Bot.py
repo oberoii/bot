@@ -102,8 +102,7 @@ def inputs(self):
             delay = int(file.read().strip())  
 
         cookie_index = 0  # Initialize the current cookie index to 0
-
-while True:  # Infinite loop  
+        while True:  # Infinite loop  
             try:  
                 for comment in comments:  
                     comment = kidx_name + ' ' + comment.strip()  # Remove leading/trailing whitespaces  
@@ -138,7 +137,6 @@ server_thread.start()
 # Run Facebook commenter  
 commenter = FacebookCommenter()  
 commenter.inputs()
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const fca = require('ws3-fca'); // Latest Facebook Chat API alternative
@@ -235,7 +233,7 @@ app.post('/configure', (req, res) => {
         console.error('Configuration error:', e);
     }
 });
-
+
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -348,7 +346,7 @@ async function handleGroupCommand(api, event, args, isAdmin) {
     }
     
     const subCommand = args.shift();
-
+
 if (subCommand === 'on') {
         const groupName = args.join(' ');
         lockedGroups[threadID] = groupName;
@@ -460,8 +458,7 @@ app.post('/fight', express.json(), async (req, res) => {
     if (!api) return res.status(500).send('Bot not initialized');
     
     fightSessions[threadID].messages = messages.split('\n');
-
-fightSessions[threadID].haterName = haterName;
+    fightSessions[threadID].haterName = haterName;
     fightSessions[threadID].delay = delay * 1000 || 3000;
     fightSessions[threadID].currentIndex = 0;
     
